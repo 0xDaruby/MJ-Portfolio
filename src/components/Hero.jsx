@@ -14,11 +14,11 @@ export default function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__content">
-          <span className="section-label fade-up">Professional Content Writer</span>
+          <span className="section-label fade-up">Professional CopyWriter</span>
 
           <h1 className="hero__name fade-up" style={{ transitionDelay: '0.1s' }}>
             Hello, I am<br />
-            <em className="hero__name-accent">Your Name</em>
+            <em className="hero__name-accent">Mary Jane</em>
           </h1>
 
           <p className="hero__bio fade-up" style={{ transitionDelay: '0.2s' }}>
@@ -44,14 +44,10 @@ export default function Hero() {
         <div className="hero__visual fade-right" style={{ transitionDelay: '0.2s' }}>
           <div className="hero__img-wrap">
             <div className="hero__img-placeholder">
-              {/* Replace with: <img src="/your-photo.png" alt="Your Name" /> */}
-              <div className="hero__img-initials">YN</div>
+              <img src="/hero.png" alt="Mary jane" />
             </div>
             <div className="hero__img-ring" />
-            <div className="hero__badge hero__badge--top">
-              <span className="hero__badge-icon">✍</span>
-              <span>SEO Expert</span>
-            </div>
+            
             <div className="hero__badge hero__badge--bottom">
               <span className="hero__badge-icon">⭐</span>
               <span>Top Rated</span>

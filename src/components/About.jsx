@@ -21,8 +21,7 @@ export default function About() {
         <div className="about__image-col fade-left">
           <div className="about__img-wrap">
             <div className="about__img-placeholder">
-              {/* Replace with: <img src="/about-photo.jpg" alt="About me" /> */}
-              <div className="about__img-initials">YN</div>
+              <img src="/about-photo.jpg" alt="About me" />
             </div>
             <div className="about__highlights">
               {highlights.map((h) => (
