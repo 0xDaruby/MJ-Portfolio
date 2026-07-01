@@ -1,9 +1,9 @@
 import './Hero.css'
 
 const stats = [
-  { value: '10+', label: 'Years Experience' },
-  { value: '200+', label: 'Articles Published' },
-  { value: '50+', label: 'Happy Clients' },
+  { value: '5+', label: 'Years Experience' },
+  { value: '50+', label: 'Articles Published' },
+  { value: '10+', label: 'Happy Clients' },
 ]
 
 export default function Hero() {
@@ -14,7 +14,7 @@ export default function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__content">
-          <span className="section-label fade-up">Professional CopyWriter</span>
+          <span className="section-label fade-up">Direct Response Copywriter</span>
 
           <h1 className="hero__name fade-up" style={{ transitionDelay: '0.1s' }}>
             Hello, I am<br />
@@ -22,12 +22,11 @@ export default function Hero() {
           </h1>
 
           <p className="hero__bio fade-up" style={{ transitionDelay: '0.2s' }}>
-            A long-time content writer, internet marketer, and website owner with
-            10+ years of experience in digital marketing and SEO-driven content strategy.
+            I help coaches, consultants, and SaaS businesses turn attention into revenue through strategic messaging and persuasive scripts with high convertion.
           </p>
 
           <div className="hero__actions fade-up" style={{ transitionDelay: '0.3s' }}>
-            <a href="#contact" className="btn-primary">Hire Me</a>
+            <a href="#contact" className="btn-primary">Let's Talk</a>
             <a href="#about" className="btn-outline">Know More</a>
           </div>
 

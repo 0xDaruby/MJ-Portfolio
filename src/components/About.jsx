@@ -1,17 +1,15 @@
 import './About.css'
 
 const skills = [
-  { label: 'SEO Writing', pct: 95 },
+  { label: 'Direct Response Copywriting', pct: 98 },
   { label: 'Content Strategy', pct: 90 },
   { label: 'Copywriting', pct: 88 },
-  { label: 'Technical Writing', pct: 82 },
+  { label: 'Conversion Optimization', pct: 90 },
 ]
 
 const highlights = [
-  { icon: '📅', label: 'Experience', value: '10+ Years' },
-  { icon: '📝', label: 'Articles Written', value: '500+' },
-  { icon: '🌐', label: 'Websites Managed', value: '30+' },
-  { icon: '🏆', label: 'Awards Won', value: '5' },
+  { icon: '/calendar.png', label: 'Experience', value: '5+ Years' },
+  { icon: '/book.png', label: 'Articles Written', value: '50+' },
 ]
 
 export default function About() {
@@ -26,7 +24,9 @@ export default function About() {
             <div className="about__highlights">
               {highlights.map((h) => (
                 <div key={h.label} className="about__highlight-card">
-                  <span className="about__highlight-icon">{h.icon}</span>
+                  <span className="about__highlight-icon">
+                    <img src={h.icon} alt="" />
+                  </span>
                   <div>
                     <div className="about__highlight-value">{h.value}</div>
                     <div className="about__highlight-label">{h.label}</div>
@@ -38,20 +38,20 @@ export default function About() {
         </div>
 
         <div className="about__text-col fade-right">
-          <span className="section-label">About Myself</span>
+          <span className="section-label">About Me</span>
           <h2 className="section-title">
             Crafting words that<br />
             <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>drive results</em>
           </h2>
           <p className="about__para">
-            I have 10+ years of experience writing for the web in an SEO-friendly manner,
-            published on top-rated sites. I deliver articles on time that follow your
-            writing and formatting guidelines, with familiarity in extensive keyword research.
+          I believe great copy does more than just sound good it should solve business problems.
+          By combining customer psychology, market research, and persuasive messaging, 
+          I create copy that connects with the right audience and inspires meaningful action.
           </p>
           <p className="about__para" style={{ marginTop: '16px' }}>
-            My articles are well-researched, driving strong traffic to your website.
-            All content is created with the highest quality standards and tailored
-            to your brand voice.
+            Whether it's a website, landing page, sales page, or email campaign, 
+            every word is crafted with a clear purpose: to communicate your value, build trust,
+            and turn attention into measurable business growth.
           </p>
 
           <div className="about__skills">
