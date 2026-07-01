@@ -187,9 +187,14 @@
 
 .about__skill-fill {
   height: 100%;
+  width: 0;
   background: linear-gradient(90deg, var(--accent), rgba(183,143,93,0.35));
   border-radius: 2px;
-  transition: width 1s ease;
+  transition: width 1.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.about__skill-fill.is-visible {
+  width: var(--target-width);
 }
 
 

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import './About.css'
 
 const skills = [
@@ -13,8 +14,29 @@ const highlights = [
 ]
 
 export default function About() {
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const node = sectionRef.current
+    if (!node || hasAnimated) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasAnimated(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.25 }
+    )
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [hasAnimated])
+
   return (
-    <section id="about" className="section-pad about">
+    <section id="about" className="section-pad about" ref={sectionRef}>
       <div className="container about__inner">
         <div className="about__image-col fade-left">
           <div className="about__img-wrap">
@@ -63,8 +85,8 @@ export default function About() {
                 </div>
                 <div className="about__skill-bar">
                   <div
-                    className="about__skill-fill"
-                    style={{ width: `${s.pct}%` }}
+                    className={`about__skill-fill ${hasAnimated ? 'is-visible' : ''}`}
+                    style={{ '--target-width': `${s.pct}%` }}
                   />
                 </div>
               </div>

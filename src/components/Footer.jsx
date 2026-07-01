@@ -12,7 +12,7 @@ const navLinks = [
 const socials = [
   {
     label: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/maryjane-miracle-936740397?trk=contact-info',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -22,7 +22,7 @@ const socials = [
   },
   {
     label: 'Twitter',
-    href: '#',
+    href: 'https://x.com/MaryjaneM65157',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -31,14 +31,24 @@ const socials = [
   },
   {
     label: 'Facebook',
-    href: '#',
+    href: 'https://www.facebook.com/profile.php?id=61556708106120',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
       </svg>
     ),
   },
-  
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/maryjanemiracleozuruigbo?igsh=MXBrcG42amZ5YmU2dQ==',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4.5"/>
+        <circle cx="17.5" cy="6.5" r="1.2"/>
+      </svg>
+    ),
+  },
 ]
 
 export default function Footer() {
@@ -75,17 +85,18 @@ export default function Footer() {
         </div>
 
         <div className="footer__newsletter-col">
-          <h4 className="footer__col-title">Newsletter</h4>
+          <h4 className="footer__col-title">WhatsApp</h4>
           <p className="footer__newsletter-desc">
-            Get writing tips, SEO insights and content strategy advice delivered to your inbox.
+            Want to discuss your next project
           </p>
-          <form
-            className="footer__newsletter-form"
-            onSubmit={(e) => e.preventDefault()}
+          <a
+            href="https://wa.me/2348072838162"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary footer__whatsapp-btn"
           >
-            <input type="email" placeholder="your@email.com" required />
-            <button type="submit" className="btn-primary">Subscribe</button>
-          </form>
+            Send a DM
+          </a>
         </div>
       </div>
 
