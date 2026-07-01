@@ -38,15 +38,7 @@ const socials = [
       </svg>
     ),
   },
-  {
-    label: 'YouTube',
-    href: '#',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
-      </svg>
-    ),
-  },
+  
 ]
 
 export default function Footer() {
@@ -99,8 +91,10 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <span className="footer__copy">© 2024 YourName. All rights reserved.</span>
-          <span className="footer__credit">Built with care ✦</span>
+          <span className="footer__copy">© 2026 Mary Jane. All rights reserved.</span>
+          <a href="https://www.oxdaruby.tech/" target="_blank" rel="noreferrer" className="footer__credit">
+            Built by 0xdaruby✦
+          </a>
         </div>
       </div>
     </footer>

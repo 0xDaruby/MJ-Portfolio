@@ -1,15 +1,136 @@
 import { useState } from 'react'
 import './Contact.css'
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mrewyayb'
+const INITIAL_FORM = { firstName: '', lastName: '', email: '', topic: '', message: '', website: '' }
+const MAX_LENGTHS = { firstName: 50, lastName: 50, email: 254, topic: 50, message: 1000 }
+const VALID_TOPICS = ['content', 'seo', 'copywriting', 'other']
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const sanitizeText = (value) =>
+  value.replace(/[\u0000-\u001f\u007f]/g, '').replace(/\s+/g, ' ').trim()
+
+function validateForm(form) {
+  const errors = {}
+  const firstName = sanitizeText(form.firstName)
+  const lastName = sanitizeText(form.lastName)
+  const email = sanitizeText(form.email)
+  const topic = sanitizeText(form.topic)
+  const message = sanitizeText(form.message)
+  const website = sanitizeText(form.website)
+
+  if (website) errors.website = 'Unexpected input.'
+
+  if (!firstName) {
+    errors.firstName = 'First name is required.'
+  } else if (firstName.length > MAX_LENGTHS.firstName) {
+    errors.firstName = 'First name is too long.'
+  } else if (!/^[A-Za-zÀ-ÿ' -]+$/.test(firstName)) {
+    errors.firstName = 'Please use letters, spaces, hyphens, or apostrophes.'
+  }
+
+  if (!lastName) {
+    errors.lastName = 'Last name is required.'
+  } else if (lastName.length > MAX_LENGTHS.lastName) {
+    errors.lastName = 'Last name is too long.'
+  } else if (!/^[A-Za-zÀ-ÿ' -]+$/.test(lastName)) {
+    errors.lastName = 'Please use letters, spaces, hyphens, or apostrophes.'
+  }
+
+  if (!email) {
+    errors.email = 'Email address is required.'
+  } else if (email.length > MAX_LENGTHS.email) {
+    errors.email = 'Email address is too long.'
+  } else if (!EMAIL_PATTERN.test(email)) {
+    errors.email = 'Please enter a valid email address.'
+  }
+
+  if (!topic) {
+    errors.topic = 'Please select a topic.'
+  } else if (!VALID_TOPICS.includes(topic)) {
+    errors.topic = 'Invalid topic selected.'
+  }
+
+  if (!message) {
+    errors.message = 'Message is required.'
+  } else if (message.length < 10) {
+    errors.message = 'Please share a little more detail.'
+  } else if (message.length > MAX_LENGTHS.message) {
+    errors.message = 'Message is too long.'
+  } else if (/[<>]/.test(message)) {
+    errors.message = 'Please avoid HTML characters in your message.'
+  }
+
+  return errors
+}
+
 export default function Contact() {
-  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', topic: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [form, setForm] = useState(INITIAL_FORM)
+  const [errors, setErrors] = useState({})
+  const [status, setStatus] = useState('idle')
+  const [serverMessage, setServerMessage] = useState('')
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm((prev) => ({ ...prev, [name]: value }))
+    setErrors((prev) => ({ ...prev, [name]: undefined }))
+    if (status !== 'idle') setStatus('idle')
+  }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    setServerMessage('')
+
+    const validationErrors = validateForm(form)
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      setStatus('idle')
+      return
+    }
+
+    if (form.website) {
+      setStatus('success')
+      setForm(INITIAL_FORM)
+      return
+    }
+
+    const now = Date.now()
+    const lastSubmitted = Number(window.localStorage.getItem('contact-last-submit') || '0')
+    if (now - lastSubmitted < 60_000) {
+      setStatus('error')
+      setServerMessage('Please wait a moment before sending another message.')
+      return
+    }
+
+    setStatus('submitting')
+
+    try {
+      const payload = new URLSearchParams({
+        firstName: sanitizeText(form.firstName),
+        lastName: sanitizeText(form.lastName),
+        email: sanitizeText(form.email),
+        topic: sanitizeText(form.topic),
+        message: sanitizeText(form.message),
+        _replyto: sanitizeText(form.email),
+        _subject: 'New message from your portfolio site',
+      })
+
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: payload,
+      })
+
+      if (!response.ok) throw new Error('Unable to send your message right now. Please try again in a moment.')
+
+      window.localStorage.setItem('contact-last-submit', String(now))
+      setForm(INITIAL_FORM)
+      setErrors({})
+      setStatus('success')
+    } catch (error) {
+      setStatus('error')
+      setServerMessage(error.message || 'Unable to send your message right now. Please try again in a moment.')
+    }
   }
 
   return (
@@ -32,7 +153,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="contact__detail-label">Phone</div>
-                <a href="tel:+2195550114" className="contact__detail-value">219 555-0114</a>
+                <a href="tel:+2348072838162" className="contact__detail-value">+234 807 283 8162 </a>
               </div>
             </div>
 
@@ -44,7 +165,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="contact__detail-label">Email</div>
-                <a href="mailto:hello@yourname.com" className="contact__detail-value">hello@yourname.com</a>
+                <a href="mailto:maryjanemiracle1@gmail.com" className="contact__detail-value">maryjanemiracle1@gmail.com</a>
               </div>
             </div>
 
@@ -56,21 +177,21 @@ export default function Contact() {
               </div>
               <div>
                 <div className="contact__detail-label">Location</div>
-                <span className="contact__detail-value">New Jersey, USA</span>
+                <span className="contact__detail-value">Owerri, Nigeria</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="contact__form-wrap fade-right" style={{ transitionDelay: '0.15s' }}>
-          {sent ? (
-            <div className="contact__success">
+          {status === 'success' ? (
+            <div className="contact__success" role="status" aria-live="polite">
               <div className="contact__success-icon">✓</div>
               <h3>Message Sent!</h3>
               <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
             </div>
           ) : (
-            <form className="contact__form" onSubmit={handleSubmit}>
+            <form className="contact__form" onSubmit={handleSubmit} noValidate>
               <div className="contact__form-row">
                 <div className="contact__field">
                   <input
@@ -80,7 +201,9 @@ export default function Contact() {
                     value={form.firstName}
                     onChange={handleChange}
                     required
+                    maxLength={MAX_LENGTHS.firstName}
                   />
+                  {errors.firstName && <span className="contact__field-error">{errors.firstName}</span>}
                 </div>
                 <div className="contact__field">
                   <input
@@ -90,7 +213,9 @@ export default function Contact() {
                     value={form.lastName}
                     onChange={handleChange}
                     required
+                    maxLength={MAX_LENGTHS.lastName}
                   />
+                  {errors.lastName && <span className="contact__field-error">{errors.lastName}</span>}
                 </div>
               </div>
 
@@ -103,7 +228,9 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     required
+                    maxLength={MAX_LENGTHS.email}
                   />
+                  {errors.email && <span className="contact__field-error">{errors.email}</span>}
                 </div>
                 <div className="contact__field">
                   <select name="topic" value={form.topic} onChange={handleChange} required>
@@ -113,6 +240,7 @@ export default function Contact() {
                     <option value="copywriting">Copywriting</option>
                     <option value="other">Other</option>
                   </select>
+                  {errors.topic && <span className="contact__field-error">{errors.topic}</span>}
                 </div>
               </div>
 
@@ -124,11 +252,29 @@ export default function Contact() {
                   value={form.message}
                   onChange={handleChange}
                   required
+                  maxLength={MAX_LENGTHS.message}
+                />
+                {errors.message && <span className="contact__field-error">{errors.message}</span>}
+              </div>
+
+              <div className="contact__field contact__field--honeypot">
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={handleChange}
+                  aria-hidden="true"
                 />
               </div>
 
-              <button type="submit" className="btn-primary contact__submit">
-                Send Message
+              {serverMessage && (
+                <p className="contact__form-error" role="alert">{serverMessage}</p>
+              )}
+
+              <button type="submit" className="btn-primary contact__submit" disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'Sending...' : 'Send Message'}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
                 </svg>

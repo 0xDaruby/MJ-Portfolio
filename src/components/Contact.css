@@ -113,7 +113,30 @@ a.contact__detail-value:hover { color: var(--accent); }
 
 .contact__field textarea { resize: vertical; min-height: 120px; }
 
+.contact__field-error {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: #b44646;
+}
+
+.contact__field--honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact__form-error {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #b44646;
+}
+
 .contact__submit { width: 100%; justify-content: center; padding: 15px; font-size: 0.95rem; }
+.contact__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
 
 .contact__success {
   text-align: center;
