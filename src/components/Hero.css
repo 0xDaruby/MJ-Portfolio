@@ -18,6 +18,7 @@
     linear-gradient(90deg, rgba(16, 24, 32, 0.04) 1px, transparent 1px);
   background-size: 68px 68px;
   opacity: 0.35;
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 50%, black 18%, transparent 100%);
   mask-image: radial-gradient(ellipse 70% 55% at 50% 50%, black 18%, transparent 100%);
 }
 
@@ -200,6 +201,7 @@
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
