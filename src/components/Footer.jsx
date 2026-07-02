@@ -57,8 +57,8 @@ export default function Footer() {
       <div className="container footer__top">
         <div className="footer__brand">
           <a href="#hero" className="footer__logo">
-            <span className="footer__logo-mark">N</span>
-            <span className="footer__logo-text">YourName</span>
+            <span className="footer__logo-mark">MJ</span>
+            <span className="footer__logo-text">Mary Jane</span>
           </a>
           <p className="footer__tagline">
             Professional content writer helping brands grow through strategic,

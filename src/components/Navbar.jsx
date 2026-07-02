@@ -29,8 +29,8 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <a href="#hero" className="navbar__logo" onClick={() => handleNav('#hero')}>
-          <span className="navbar__logo-mark">N</span>
-          <span className="navbar__logo-text">YourName</span>
+          <span className="navbar__logo-mark">MJ</span>
+          <span className="navbar__logo-text">Mary Jane</span>
         </a>
 
         <ul className={`navbar__links${open ? ' navbar__links--open' : ''}`}>
