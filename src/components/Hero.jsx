@@ -22,7 +22,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__bio fade-up" style={{ transitionDelay: '0.2s' }}>
-            I help coaches, consultants, and SaaS businesses turn attention into revenue through strategic messaging and persuasive scripts with high convertion.
+            I help coaches, consultants, and SaaS businesses turn attention into revenue through strategic messaging and persuasive scripts with high conversion.
           </p>
 
           <div className="hero__actions fade-up" style={{ transitionDelay: '0.3s' }}>
@@ -43,7 +43,7 @@ export default function Hero() {
         <div className="hero__visual fade-right" style={{ transitionDelay: '0.2s' }}>
           <div className="hero__img-wrap">
             <div className="hero__img-placeholder">
-              <img src="/hero.png" alt="Mary jane" />
+              <img src="/hero.png" alt="Mary Jane Miracle, professional copywriter" loading="eager" decoding="async" width="640" height="760" />
             </div>
             <div className="hero__img-ring" />
             

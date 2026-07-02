@@ -194,7 +194,9 @@ export default function Contact() {
             <form className="contact__form" onSubmit={handleSubmit} noValidate>
               <div className="contact__form-row">
                 <div className="contact__field">
+                  <label htmlFor="firstName" className="sr-only">First name</label>
                   <input
+                    id="firstName"
                     type="text"
                     name="firstName"
                     placeholder="First Name"
@@ -202,11 +204,14 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     maxLength={MAX_LENGTHS.firstName}
+                    autoComplete="given-name"
                   />
                   {errors.firstName && <span className="contact__field-error">{errors.firstName}</span>}
                 </div>
                 <div className="contact__field">
+                  <label htmlFor="lastName" className="sr-only">Last name</label>
                   <input
+                    id="lastName"
                     type="text"
                     name="lastName"
                     placeholder="Last Name"
@@ -214,6 +219,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     maxLength={MAX_LENGTHS.lastName}
+                    autoComplete="family-name"
                   />
                   {errors.lastName && <span className="contact__field-error">{errors.lastName}</span>}
                 </div>
@@ -221,7 +227,9 @@ export default function Contact() {
 
               <div className="contact__form-row">
                 <div className="contact__field">
+                  <label htmlFor="email" className="sr-only">Email address</label>
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     placeholder="Email Address"
@@ -229,11 +237,13 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     maxLength={MAX_LENGTHS.email}
+                    autoComplete="email"
                   />
                   {errors.email && <span className="contact__field-error">{errors.email}</span>}
                 </div>
                 <div className="contact__field">
-                  <select name="topic" value={form.topic} onChange={handleChange} required>
+                  <label htmlFor="topic" className="sr-only">Select a topic</label>
+                  <select id="topic" name="topic" value={form.topic} onChange={handleChange} required>
                     <option value="">Select Topic</option>
                     <option value="content">Content Writing</option>
                     <option value="seo">SEO Strategy</option>
@@ -245,7 +255,9 @@ export default function Contact() {
               </div>
 
               <div className="contact__field">
+                <label htmlFor="message" className="sr-only">Message</label>
                 <textarea
+                  id="message"
                   name="message"
                   placeholder="Write your message..."
                   rows={5}
@@ -258,7 +270,9 @@ export default function Contact() {
               </div>
 
               <div className="contact__field contact__field--honeypot">
+                <label htmlFor="website" className="sr-only">Website</label>
                 <input
+                  id="website"
                   type="text"
                   name="website"
                   tabIndex={-1}

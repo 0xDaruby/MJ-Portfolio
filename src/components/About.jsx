@@ -41,7 +41,7 @@ export default function About() {
         <div className="about__image-col fade-left">
           <div className="about__img-wrap">
             <div className="about__img-placeholder">
-              <img src="/about-photo.jpg" alt="About me" />
+              <img src="/about-photo.jpg" alt="Mary Jane Miracle in a professional portrait" loading="lazy" decoding="async" width="640" height="800" />
             </div>
             <div className="about__highlights">
               {highlights.map((h) => (
