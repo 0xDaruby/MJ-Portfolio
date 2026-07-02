@@ -2,7 +2,7 @@
 
 A polished one-page portfolio website for Mary Jane Miracle, built with React and Vite. The site highlights her copywriting services, featured work, client recommendations, and contact options in a modern, responsive layout.
 
-![Portfolio Preview](public/preview.png)
+![Portfolio Preview](public/Preview.png)
 
 ## Highlights
 
