@@ -6,25 +6,25 @@ const portfolioItems = [
     id: 'email-sequences',
     title: 'Email Sequences',
     category: 'Email',
-    description: 'Welcome, nurture, launch, and recovery email flows that guide subscribers toward action with clarity and momentum.',
+    description: 'a selection of email sequences designed to nurture leads and drive conversions.',
     sampleCount: 8,
     icon: '✉️',
     tags: ['Email', 'Conversion'],
     samples: [
       {
-        title: 'Lead Magnet Welcome Sequence',
-        summary: 'A five-email onboarding sequence that introduces the offer, builds trust, and encourages the next step.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'Email for client acquisition',
+        summary: 'I crafted a persuasive email sequence to attract and convert potential clients, highlighting the unique value proposition and benefits of the service.',
+        url: 'https://drive.google.com/drive/folders/1NlIbtZhpMYJ_5p0qOA11PuO0jgMKhS9N',
       },
       {
-        title: 'Cart Recovery Sequence',
-        summary: 'A persuasive re-engagement flow designed to recover abandoned interest with urgency and value.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'Storytelling sale email',
+        summary: 'I developed a compelling storytelling email sequence that engaged readers, built trust, and guided them towards making a purchase decision.',
+        url: 'https://drive.google.com/drive/folders/1NlIbtZhpMYJ_5p0qOA11PuO0jgMKhS9N',
       },
       {
-        title: 'Launch Email Series',
-        summary: 'A multi-email campaign that creates anticipation and highlights the offer clearly.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'DWA email sequence',
+        summary: 'I created a targeted email sequence for DWA, focusing on delivering valuable content, addressing pain points, and encouraging recipients to take action.',
+        url: 'https://drive.google.com/drive/folders/1NlIbtZhpMYJ_5p0qOA11PuO0jgMKhS9N',
       },
     ],
   },
@@ -38,9 +38,9 @@ const portfolioItems = [
     tags: ['Blog', 'SEO'],
     samples: [
       {
-        title: 'SEO Content Sample',
+        title: 'WorkFlo Blog Post',
         summary: 'A long-form article built around search intent, reader value, and clear conversion paths.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        url: 'https://drive.google.com/drive/folders/14WLvTScnVqpb7bN6z-lGtG2TVrNq9ReP',
       },
     ],
   },
@@ -54,14 +54,14 @@ const portfolioItems = [
     tags: ['Social', 'Thought Leadership'],
     samples: [
       {
-        title: 'Thought Leadership Post',
-        summary: 'A post designed to spark conversation while reinforcing expertise and relevance.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'GW Thread 1',
+        summary: '',
+        url: 'https://drive.google.com/drive/folders/1LrPi8ApQDfE15brw_V90zkvXUdEsDYmv',
       },
       {
-        title: 'Brand Awareness Post',
-        summary: 'A concise social post crafted to increase reach and create a stronger brand presence.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'GW Thread 27',
+        summary: '',
+        url: 'https://drive.google.com/drive/folders/1LrPi8ApQDfE15brw_V90zkvXUdEsDYmv',
       },
     ],
   },
@@ -75,9 +75,9 @@ const portfolioItems = [
     tags: ['Ads', 'Paid Media'],
     samples: [
       {
-        title: 'Meta Ad Copy Sample',
-        summary: 'A short-form ad concept focused on attention, value, and a clear call to action.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'Meta Ads',
+        summary: 'A short-form ad concept for a variety of agencies, designed to capture attention quickly and support a clear brand message.',
+        url: 'https://drive.google.com/drive/folders/1HxFXo-J6Q4KOyWEZhy-03GW_r7k7F4Jk',
       },
     ],
   },
@@ -91,30 +91,14 @@ const portfolioItems = [
     tags: ['Sales', 'Conversion'],
     samples: [
       {
-        title: 'Product Launch Page',
-        summary: 'A conversion-focused page structured for clarity, trust, and a stronger offer narrative.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'Affiliate Marketing course',
+        summary: '',
+        url: 'https://drive.google.com/drive/folders/1Oyv5M-N56sBjNs5y4AruToZwGlwG6Elr',
       },
       {
-        title: 'Service Sales Page',
-        summary: 'A benefits-led page designed to communicate value and make the offer feel easier to choose.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
-      },
-    ],
-  },
-  {
-    id: 'video-ads',
-    title: 'Video Ads Scripts',
-    category: 'Ads',
-    description: 'Short-form video concepts written to capture attention quickly and support a clear brand message.',
-    sampleCount: 1,
-    icon: '🎥',
-    tags: ['Video', 'Ads'],
-    samples: [
-      {
-        title: 'Short Video Script',
-        summary: 'A concise script built to hook viewers early and guide them toward the intended action.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'WordPress training Sales Page copy',
+        summary: '',
+        url: 'https://drive.google.com/drive/folders/1Oyv5M-N56sBjNs5y4AruToZwGlwG6Elr',
       },
     ],
   },
@@ -128,25 +112,14 @@ const portfolioItems = [
     tags: ['Video', 'Content'],
     samples: [
       {
-        title: 'Explainer Video Script',
-        summary: 'A structured script that turns complex ideas into a clear and engaging story.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'Real Estate Video Script',
+        summary: 'A concise script for a real estate video, designed to highlight property features and benefits while maintaining viewer interest.',
+        url: 'https://drive.google.com/drive/folders/1B5MCz9ArwUuVAQT8F5TV0xV4h3CwFAAD',
       },
-    ],
-  },
-  {
-    id: 'youtube-scripts',
-    title: 'YouTube Scripts',
-    category: 'Content',
-    description: 'Narrative-driven video scripts tailored for audience retention, clarity, and a strong finish.',
-    sampleCount: 1,
-    icon: '▶️',
-    tags: ['YouTube', 'Video'],
-    samples: [
       {
-        title: 'YouTube Script Sample',
-        summary: 'A ready-to-record script written to keep pacing steady while reinforcing the main message.',
-        url: 'https://drive.google.com/drive/u/0/my-drive',
+        title: 'Reel Script for fitness trainer',
+        summary: '.',
+        url: 'https://drive.google.com/drive/folders/1B5MCz9ArwUuVAQT8F5TV0xV4h3CwFAAD',
       },
     ],
   },
@@ -166,10 +139,9 @@ export default function Portfolio() {
     <section id="portfolio" className="section-pad portfolio">
       <div className="container">
         <div className="portfolio__header fade-up">
-          <span className="section-label">My Work</span>
           <h2 className="section-title">Recent Work</h2>
           <p className="section-subtitle">
-            A selection of service-based writing samples designed to show the value of the work at a glance.
+            A selection of my recent projects and writing samples.
           </p>
         </div>
 
