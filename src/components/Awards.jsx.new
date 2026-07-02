@@ -35,12 +35,15 @@ export default function Awards() {
 
     return undefined
   }, [activeIndex, slides.length])
+
   return (
     <section id="awards" className="section-pad awards">
       <div className="container">
         <div className="awards__header fade-up">
-          <h2 className="section-title">Client Reviews & Recomendations</h2>
-          
+          <h2 className="section-title">Client Reviews & Recommendations</h2>
+          <p className="section-subtitle">
+            Social proof from clients and collaborators, presented as polished recommendation highlights.
+          </p>
         </div>
 
         <div
