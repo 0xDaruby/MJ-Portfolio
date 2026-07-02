@@ -1,16 +1,46 @@
-# React + Vite
+# Mary Jane Miracle Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A polished one-page portfolio website for Mary Jane Miracle, built with React and Vite. The site highlights her copywriting services, featured work, client recommendations, and contact options in a modern, responsive layout.
 
-Currently, two official plugins are available:
+![Portfolio Preview](public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Highlights
 
-## React Compiler
+- Responsive one-page portfolio experience
+- Sections for hero, about, services, recent work, testimonials, and contact
+- Accessible navigation and form experience
+- Optimized for desktop and mobile viewing
+- Built with React, Vite, and modern CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the Oxlint configuration
+- React 19
+- Vite 8
+- CSS Modules-style component styling
+- Oxlint for linting
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Getting Started
+
+1. Install dependencies
+   ```bash
+   npm install
+   ```
+2. Start the development server
+   ```bash
+   npm run dev
+   ```
+3. Build for production
+   ```bash
+   npm run build
+   ```
+
+## Project Structure
+
+- src/components - Page sections and UI components
+- src/index.css - Global styles and design tokens
+- public - Static assets including the preview image and portfolio images
+
+## Deployment
+
+The project is ready to be deployed to any static hosting platform such as Vercel, Netlify, or GitHub Pages.
+
